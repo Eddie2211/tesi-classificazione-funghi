@@ -41,9 +41,9 @@ pip install -r requirements.txt
 ## Struttura del Repository
 
 ```text
-├── 01_train_hierarchical_fixed.py   # Training LCPN gerarchico e salvataggio nodi XGBoost
-├── 02_compare_flat_hier_fixed.py    # Benchmark FLAT vs LCPN e calcolo metriche (hF, TIE)
-├── 03_shap_analysis.py              # Calcolo valori SHAP e mapping con enzimi di restrizione
+├── train_hierarchical.py            # Training LCPN gerarchico e salvataggio nodi XGBoost
+├── compare_flat_hier.py             # Benchmark FLAT vs LCPN e calcolo metriche (hF, TIE)
+├── shap_analysis.py                 # Calcolo valori SHAP e mapping con enzimi di restrizione
 ├── predict.py                       # Modulo interattivo CLI / batch per file FASTA
 ├── data_utils.py                    # Routine di deduplica, rimozione leakage e normalizzazione key
 ├── kmers.py                         # Generazione dei k-mers (k=6) e pulizia caratteri IUPAC
@@ -92,10 +92,10 @@ Se si desidera ri-addestrare l'intera gerarchia di classificatori partendo dal d
 ```bash
 python train_hierarchical.py
 ```
-Esegue la deduplica dei campioni e la normalizzazione delle chiavi tassonomiche tramite data_utils.py.
-Genera i 6-mers ed estrae la matrice TF-IDF globale calcolata esclusivamente sul training set.
-Addestra i classificatori XGBoost (hist) per ciascun nodo che soddisfa il vincolo MIN_SAMPLES = 10.
-Salva i file serializzati .pkl nella cartella models_hier_fixed10/.
+-Esegue la deduplica dei campioni e la normalizzazione delle chiavi tassonomiche tramite data_utils.py.
+-Genera i 6-mers ed estrae la matrice TF-IDF globale calcolata esclusivamente sul training set.
+-Addestra i classificatori XGBoost (hist) per ciascun nodo che soddisfa il vincolo MIN_SAMPLES = 10.
+-Salva i file serializzati .pkl nella cartella models_hier_fixed10/.
 ## 2. Confronto Modello FLAT vs Gerarchico
 Per eseguire il confronto prestazionale tra il modello globale FLAT e l'approccio top-down gerarchico:
 ```bash
