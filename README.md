@@ -92,18 +92,18 @@ Se si desidera ri-addestrare l'intera gerarchia di classificatori partendo dal d
 ```bash
 python train_hierarchical.py
 ```
--Esegue la deduplica dei campioni e la normalizzazione delle chiavi tassonomiche tramite data_utils.py.
--Genera i 6-mers ed estrae la matrice TF-IDF globale calcolata esclusivamente sul training set.
--Addestra i classificatori XGBoost (hist) per ciascun nodo che soddisfa il vincolo MIN_SAMPLES = 10.
--Salva i file serializzati .pkl nella cartella models_hier_fixed10/.
+- Esegue la deduplica dei campioni e la normalizzazione delle chiavi tassonomiche tramite data_utils.py.
+- Genera i 6-mers ed estrae la matrice TF-IDF globale calcolata esclusivamente sul training set.
+- Addestra i classificatori XGBoost (hist) per ciascun nodo che soddisfa il vincolo MIN_SAMPLES = 10.
+- Salva i file serializzati .pkl nella cartella models_hier_fixed10/.
 ## 2. Confronto Modello FLAT vs Gerarchico
 Per eseguire il confronto prestazionale tra il modello globale FLAT e l'approccio top-down gerarchico:
 ```bash
 python compare_flat_hier.py
 ```
-Valuta le predizioni sul test set indipendente split_data/test_dataset.csv, eliminando preventivamente qualsiasi overlap con il train set per scongiurare il data leakage.
-Addestra la baseline FLAT (200 alberi) ed esegue l'inferenza condizionata gerarchica.Calcola le metriche: Coverage, accuratezza su righe coperte vs totale, Precisione/Richiamo/F-Score gerarchici ($hP$, $hR$, $hF$) e la distanza d'errore media sull'albero (Tree Induced Error - TIE).
-Esporta il report completo delle metriche in comparison_outputs_fixed10/comparison_report.json
+- Valuta le predizioni sul test set indipendente split_data/test_dataset.csv, eliminando preventivamente qualsiasi overlap con il train set per scongiurare il data leakage.
+- Addestra la baseline FLAT (200 alberi) ed esegue l'inferenza condizionata gerarchica.Calcola le metriche: Coverage, accuratezza su righe coperte vs totale, Precisione/Richiamo/F-Score gerarchici ($hP$, $hR$, $hF$) e la distanza d'errore media sull'albero (Tree Induced Error - TIE).
+- Esporta il report completo delle metriche in comparison_outputs_fixed10/comparison_report.json
 
 ## 3. Analisi di Spiegabilià con SHAP
 Per analizzare il contributo delle feature biologiche e la correlazione con i siti enzimatici:
