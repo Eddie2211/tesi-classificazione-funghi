@@ -1,0 +1,12 @@
+{
+  "flat_overall_accuracy": 0.40330504689593566,
+  "hier_overall_accuracy": 0.16770879857079052,
+  "hier_coverage": 0.46203662349263064,
+  "hier_covered_accuracy": 0.36297728371193816,
+  "flat_accuracy_on_reached": 0.3895601739971,
+  "hP": 0.7116145095933213,
+  "hR": 0.5569310713739875,
+  "hF": 0.6248419247669059,
+  "TIE_mean_unit": 3.9086645824028583,
+  "test_size": 4478
+}
