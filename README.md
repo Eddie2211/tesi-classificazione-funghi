@@ -39,3 +39,23 @@ $$\text{Phylum} \longrightarrow \text{Classe} \longrightarrow \text{Ordine} \lon
 │   ├── shap_restriction_hits.csv
 │   └── plots/
 └── README.md                        # Guida alla riproducibilità e documentazione
+
+
+## Requisiti e Configurazione Ambiente
+
+
+1. Clonare il repository:
+   git clone https://github.com/Eddie2211/tesi-classificazione-funghi.git
+   cd tesi-classificazione-funghi
+
+2. Creare e attivare l'ambiente virtuale:
+   # Linux / macOS:
+   python3 -m venv venv
+   source venv/bin/activate
+
+   # Windows:
+   python -m venv venv
+   venv\Scripts\activate
+
+3. Installare le librerie:
+   pip install -r requirements.txt
